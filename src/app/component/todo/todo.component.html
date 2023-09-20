@@ -1,0 +1,23 @@
+<div class="bg-dark p-5 text-white text-center">
+    <div class="container">
+        <h1 class="py-4">TODOs List</h1>
+        <div class="row">
+            <div class="col-md-9">
+                <input type="text" class="form-control" name="taskName" placeholder="Enter ToDo" [(ngModel)]="taskName"> 
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-success" (click)="addTodo()">Add</button>
+            </div>
+        </div>
+
+
+        <div class="row pt-5" *ngFor="let Todo of todoList , let i =index ">
+            <div class="col-md-9">
+                <p class="p-2 bg-light rounded text-dark">{{i+1}}- {{Todo}}</p>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-danger" (click)="removeTodo(i)">Remove</button>
+            </div>
+        </div>
+    </div>
+</div>
